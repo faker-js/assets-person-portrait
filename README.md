@@ -7,8 +7,10 @@ PRs will be rejected.
 Please access the assets via CDN: TODO
 
 ## Repo Structure
-
-TODO
+```
+/SEX/SIZE/INDEX.jpg
+/{male,female}/{16,32,64,128,256,512}/{0...99}.jpg
+```
 
 ## Re-Generating New Images
 
