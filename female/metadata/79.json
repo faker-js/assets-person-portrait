@@ -1,1 +1,15 @@
-{"service":"replicate","prompt":"profile picture of a 89-year-old woman from Somalia","model":"stability-ai/stable-diffusion-3","parameters":{"cfg":3.5,"steps":28,"prompt":"profile picture of a 89-year-old woman from Somalia","aspect_ratio":"1:1","output_format":"jpg","output_quality":90,"negative_prompt":"","prompt_strength":0.85}}
+{
+  "service": "replicate",
+  "prompt": "profile picture of a 89-year-old woman from Somalia",
+  "model": "stability-ai/stable-diffusion-3",
+  "parameters": {
+    "cfg": 3.5,
+    "steps": 28,
+    "prompt": "profile picture of a 89-year-old woman from Somalia",
+    "aspect_ratio": "1:1",
+    "output_format": "jpg",
+    "output_quality": 90,
+    "negative_prompt": "",
+    "prompt_strength": 0.85
+  }
+}
