@@ -9,7 +9,8 @@ Please access the assets via CDN, for example
 https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/42.jpg
 
 ## Repo Structure
-```
+
+```txt
 /SEX/SIZE/INDEX.jpg
 /{male,female}/{32,64,128,256,512}/{0...99}.jpg
 ```
