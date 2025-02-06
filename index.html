@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faker Person Portraits Grid</title>
+    <link
+      rel="icon"
+      href="https://fakerjs.dev/logo.svg"
+      sizes="any"
+      type="image/svg+xml"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Grid container for all images */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+        gap: 10px;
+        padding: 10px;
+      }
+
+      /* Each image container is positioned relative for the overlay */
+      .image-container {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .image-container img {
+        width: 100%;
+        display: block;
+      }
+
+      /* Overlay caption styling */
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 10px;
+        padding: 2px 4px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid" id="grid"></div>
+
+    <script>
+      // Define the two types and the range of numbers.
+      const TYPES = ["male", "female"];
+      const TOTAL_IMAGES = 100; // Numbers 0 to 99
+
+      // Base URL for the images.
+      const BASE_URL =
+        "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait";
+
+      // Get the grid container from the DOM.
+      const grid = document.getElementById("grid");
+
+      // Loop through each type and number to create the image elements.
+      for (const type of TYPES) {
+        for (let i = 0; i < TOTAL_IMAGES; i++) {
+          // Construct the URL and filename text.
+          const imageUrl = `${BASE_URL}/${type}/512/${i}.jpg`;
+          const filenameText = `${type}/${i}.jpg`;
+
+          // Create a container div for the image and its overlay.
+          const container = document.createElement("div");
+          container.className = "image-container";
+
+          // Create the image element.
+          const img = document.createElement("img");
+          img.src = imageUrl;
+          img.alt = filenameText;
+
+          // Create the overlay element for the filename.
+          const overlay = document.createElement("div");
+          overlay.className = "overlay";
+          overlay.textContent = filenameText;
+
+          // Append the image and overlay to the container.
+          container.appendChild(img);
+          container.appendChild(overlay);
+
+          // Append the container to the grid.
+          grid.appendChild(container);
+        }
+      }
+    </script>
+  </body>
+</html>
